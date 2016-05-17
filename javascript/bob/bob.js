@@ -6,7 +6,18 @@
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
-return "Whatever.";
+  var inputArray = input.split("");
+  if(input === input.toUpperCase()
+  && input.length > 2
+  && isNaN(inputArray[input.length-1])) {
+    return "Whoa, chill out!";
+  } else if (input.length > 1 && input.indexOf("?") === (input.length-1)){
+    return "Sure."
+  } else if (input.trim().length !== 0) {
+  return "Whatever.";
+} else {
+  return "Fine. Be that way!";
+}
 };
 
 module.exports = Bob;
